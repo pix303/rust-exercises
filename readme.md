@@ -5,3 +5,4 @@
 - *enum-status*: exercise to test enum for a item status property
 - *file-list-filter*: exercise to test iterator operations and to read a source from file system
 - *polymorphism*: test how rust manage polimorphims by traits
+- *json-reader*: test how to manage json (marshal/unmarshal on struct, how to remap prop name)
