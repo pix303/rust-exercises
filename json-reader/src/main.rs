@@ -1,4 +1,4 @@
-use std::{error::Error, fs::read_to_string};
+use std::{error::Error, fs::read_to_string, fs::write};
 mod todo_item;
 use todo_item::TodoItem;
 
@@ -26,7 +26,7 @@ fn main() {
     let todos: Vec<TodoItem> = todos_iter.filter(|t| t.completed).collect();
 
     let completed_source: String = serde_json::to_string(&todos).expect("error on json encoding");
-    let r = std::fs::write("completed.json", completed_source);
+    let r = write("completed.json", completed_source);
     match r {
         Ok(_) => println!("completed.json saved with success"),
         Err(e) => eprintln!("error on save json{:?}", e),
