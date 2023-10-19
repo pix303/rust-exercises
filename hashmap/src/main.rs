@@ -23,17 +23,21 @@ fn main() {
     // does update,"saab" not exists
     hm.entry("saab").or_insert(4);
 
-    // iter return tuple of keys and values
-    for e in hm.into_iter() {
-        println!("{}: {}", e.0, e.1);
-    }
-    for ed in hm.into_iter() {
-        println!("{}: {}", ed.0, ed.1);
+    let new_entry = hm.entry("dmc").or_default();
+    println!("the default value of a new entry {}", new_entry);
+
+    let get_result = hm.get("wrong");
+    match get_result {
+        Some(v) => println!("you got the value: {}", v),
+        None => println!("you got nothing"),
     }
 
-    // // iter return tuple of keys and values
-    // let all_keys = hm.keys().clone();
-    // for e in all_keys.enumerate() {
-    //     println!("{}: {}", e.0, e.1);
-    // }
+    // iter return tuple of keys and values
+    for e in &hm {
+        println!("{}: {}", e.0, e.1);
+    }
+    // so better deconstruct key and value
+    for (k, v) in &hm {
+        println!("{}: {}", k, v);
+    }
 }
