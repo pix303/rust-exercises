@@ -40,4 +40,8 @@ fn main() {
     for (k, v) in &hm {
         println!("{}: {}", k, v);
     }
+
+    for k in hm.keys() {
+        println!("the key is: {}", k)
+    }
 }
