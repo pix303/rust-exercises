@@ -13,7 +13,7 @@ fn main() {
     // get value from &str key
     println!("value of ford: {}", hm.get(ford).unwrap());
     println!("value of ford: {}", hm.get("ford").unwrap());
-    // get value from String key
+    // get value from string key
     println!("value of fiat: {}", hm.get("fiat").unwrap());
     println!("value of fiat: {}", hm.get(fiat.as_str()).unwrap());
 
