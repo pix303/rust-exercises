@@ -5,21 +5,22 @@ fn main() {
     let sum_to_compare = 7;
 
     let mut result: HashSet<String> = HashSet::new();
-    let mut start: usize = 0;
-    let mut counter: usize = start + 1;
+    let mut cursor: usize = 0;
+    let mut next_cursor: usize = cursor + 1;
+
     loop {
-        counter += 1;
-        if counter == nums.len() {
-            start += 1;
-            counter = start + 1;
+        next_cursor += 1;
+        if next_cursor == nums.len() {
+            cursor += 1;
+            next_cursor = cursor + 1;
         }
 
-        if start == nums.len() - 1 {
+        if cursor == nums.len() - 1 {
             break;
         }
 
-        let a = nums[start];
-        let b = nums[counter];
+        let a = nums[cursor];
+        let b = nums[next_cursor];
         let sum = a + b;
         if sum == sum_to_compare {
             result.insert(format!("{}-{}", min(a, b), max(a, b)));
