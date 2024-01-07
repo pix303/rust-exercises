@@ -26,7 +26,7 @@ fn main() {
     let new_entry = hm.entry("dmc").or_default();
     println!("the default value of a new entry {}", new_entry);
 
-    let get_result = hm.get("wrong");
+    let get_result = hm.get("not-exists");
     match get_result {
         Some(v) => println!("you got the value: {}", v),
         None => println!("you got nothing"),
